@@ -31,7 +31,6 @@ public class MainClassTest {
         System.out.println("postingStatus1 = " + postingStatus1);
         System.out.println("postingStatus2 = " + postingStatus2);
         Assert.assertEquals(postingStatus1,postingStatus2);
-        //Test
     }
 
     @After
