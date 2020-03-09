@@ -17,6 +17,7 @@ public class MainClass {
         //LoginPage login = PageFactory.initElements(driver, LoginPage.class);
         login.enterUsername("ac.uat.mc.houston@asqa.com");
         login.enterPassword("houston123");
+        //Test
 //        HomePage home = login.clickLogInButton();
 //        HomePage home = new HomePage(driver);
 //        System.out.println(home.getHomeText());
