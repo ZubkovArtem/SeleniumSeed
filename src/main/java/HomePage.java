@@ -12,13 +12,7 @@ public class HomePage {
         wait = new WebDriverWait(this.driver, 30);
     }
 
-    private By homeHeader = By.xpath("//h2[text()='Getting Started']");
     private By allTabs = By.xpath("//*[@id='AllTab_Tab']/a");
-
-    public String getHomeText(){
-        wait.until(ExpectedConditions.presenceOfElementLocated(homeHeader));
-        return driver.findElement(homeHeader).getText();
-    }
 
     public AllTabsPage clickAllTabs(){
         wait.until(ExpectedConditions.presenceOfElementLocated(allTabs));
