@@ -10,10 +10,17 @@ public class BillingDetailPage extends GeneralPage{
     }
 
     private By postingStatus = By.xpath("//table[@class='detailList']//span[text()='Posting Status']/../following-sibling::td[1]/div");
+    private By postButton = By.xpath("//div[@class='pbHeader']//td[@id='topButtonRow']/input[@class='btn'][@title='Post']");
 
     public String getPostingStatusAfter(){
         wait.until(ExpectedConditions.presenceOfElementLocated(postingStatus));
         return driver.findElement(postingStatus).getText();
+    }
+
+    public BillingDetailPostScreen clickPostButton(){
+        wait.until(ExpectedConditions.presenceOfElementLocated(postButton));
+        driver.findElement(postButton).click();
+        return new BillingDetailPostScreen(driver);
     }
 
 }
