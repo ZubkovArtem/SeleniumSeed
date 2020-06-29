@@ -1,4 +1,3 @@
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +19,7 @@ public class MainClassTest {
     }
     @Test
     public void logIn(){
-        HomePage home = login.clickLogInButton("ac.uat.mc.houston@asqa.com", "houston123");
+        GeneralPage home = login.clickLogInButton("ac.qa.mc.houston@as.com", "Ac)qa(houston123");
         AllTabsPage allTabs = home.clickAllTabs();
         BillingList billingPage = allTabs.openBillingPage();
         billingPage.closeLexTryPopUp();
@@ -31,12 +30,11 @@ public class MainClassTest {
         System.out.println("postingStatus1 = " + postingStatus1);
         System.out.println("postingStatus2 = " + postingStatus2);
         Assert.assertEquals(postingStatus1,postingStatus2);
-        //ЕУФЫВФЦВФЦВ
     }
 
-    @After
-    public void tearDown(){
-        driver.quit();
-    }
+//    @After
+//    public void tearDown(){
+//        driver.quit();
+//    }
 
 }

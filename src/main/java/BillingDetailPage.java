@@ -3,16 +3,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BillingDetailPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class BillingDetailPage extends GeneralPage{
 
     public BillingDetailPage(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(this.driver, 30);
+        super(driver);
     }
 
-    private By postingStatus = By.xpath("//*[@id=\"00N3i000007rBOx_ileinner\"]");
+    private By postingStatus = By.xpath("//table[@class='detailList']//span[text()='Posting Status']/../following-sibling::td[1]/div");
 
     public String getPostingStatusAfter(){
         wait.until(ExpectedConditions.presenceOfElementLocated(postingStatus));
