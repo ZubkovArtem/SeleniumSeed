@@ -12,7 +12,7 @@ public class BillingDetailPage {
         wait = new WebDriverWait(this.driver, 30);
     }
 
-    private By postingStatus = By.xpath("//*[@id=\"00N3i000007rBOx_ileinner\"]");
+    private By postingStatus = By.xpath("//table[@class='detailList']//span[text()='Posting Status']/../following-sibling::td/div");
 
     public String getPostingStatusAfter(){
         wait.until(ExpectedConditions.presenceOfElementLocated(postingStatus));
