@@ -1,10 +1,10 @@
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class MainClassTest {
+public class Test2 {
 
     private WebDriver driver;
     private LoginPage login;
@@ -18,23 +18,21 @@ public class MainClassTest {
         login = new LoginPage(driver);
     }
     @Test
-    public void logIn(){
+    public void runTest2(){
         GeneralPage home = login.clickLogInButton("ac.qa.mc.houston@as.com", "Ac)qa(houston123");
         AllTabsPage allTabs = home.clickAllTabs();
         BillingList billingPage = allTabs.openBillingPage();
         billingPage.closeLexTryPopUp();
         BillingNewPage billingNewPage = billingPage.clickNewButton();
-        String postingStatus1 = billingNewPage.getPostingStatusBefore();
         BillingDetailPage billingDetail = billingNewPage.createBilling("Mike");
-        String postingStatus2 = billingDetail.getPostingStatusAfter();
-        System.out.println("postingStatus1 = " + postingStatus1);
-        System.out.println("postingStatus2 = " + postingStatus2);
-        Assert.assertEquals(postingStatus1,postingStatus2);
+        BillingDetailPostScreen billingDetailPostScreen = billingDetail.clickPostButton();
+        System.out.println(billingDetailPostScreen.getErrorMessage());
+
     }
 
-//    @After
-//    public void tearDown(){
-//        driver.quit();
-//    }
+    @After
+    public void tearDown(){
+        driver.quit();
+    }
 
 }
