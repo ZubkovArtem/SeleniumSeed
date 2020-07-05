@@ -9,7 +9,7 @@ public class GeneralPage {
 
     public GeneralPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 5);
     }
 
     private By allTabs = By.xpath("//*[@id='AllTab_Tab']/a");

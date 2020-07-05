@@ -1,15 +1,11 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BillingList {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class BillingList extends GeneralPage{
 
     public BillingList(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(this.driver, 30);
+        super(driver);
     }
     private By lexTryPopUp = By.xpath("//div[@id='tryLexDialog']/div//a[@class='dialogClose']");
     private By newButton = By.xpath("//input[@class='btn'][@title='New']");

@@ -27,7 +27,7 @@ public class Test1 {
         BillingNewPage billingNewPage = billingPage.clickNewButton();
         String postingStatus1 = billingNewPage.getPostingStatusBefore();
         BillingDetailPage billingDetail = billingNewPage.createBilling("Mike");
-        String postingStatus2 = billingDetail.getPostingStatusAfter();
+        String postingStatus2 = billingDetail.getPostingStatusAfterCreation();
         System.out.println("postingStatus1 = " + postingStatus1);
         System.out.println("postingStatus2 = " + postingStatus2);
         Assert.assertEquals(postingStatus1,postingStatus2);

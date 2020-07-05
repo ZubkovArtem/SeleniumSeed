@@ -7,10 +7,17 @@ public class BillingDetailPostScreen extends GeneralPage{
         super(driver);
     }
 
-    public By errorText = By.xpath("//td[@class='messageCell']/div");
+    private By errorText = By.xpath("//td[@class='messageCell']/div");
+    private By postButton = By.xpath("(//input[@value='Post'])[1]");
 
     public String getErrorMessage (){
         wait.until(ExpectedConditions.presenceOfElementLocated(errorText));
         return driver.findElement(errorText).getText();
+    }
+
+    public BillingDetailPage clickPostBilling(){
+        wait.until(ExpectedConditions.presenceOfElementLocated(postButton));
+        driver.findElement(postButton).click();
+        return new BillingDetailPage(driver);
     }
 }

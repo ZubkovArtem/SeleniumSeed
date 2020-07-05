@@ -2,15 +2,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BillingNewPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class BillingNewPage extends GeneralPage{
 
     public BillingNewPage(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(this.driver, 30);
+        super(driver);
     }
 
     private By customerField = By.xpath("//h3[text()='Customer Information']/../following-sibling::div//td//label[text()='Customer']/../../following-sibling::td//span/input");
@@ -20,8 +16,7 @@ public class BillingNewPage {
 
     public String getPostingStatusBefore (){
         wait.until(ExpectedConditions.presenceOfElementLocated(billingNewHeader));
-        String postingStatus = new Select(driver.findElement(postingStatusField)).getFirstSelectedOption().getText();
-        return postingStatus;
+        return new Select(driver.findElement(postingStatusField)).getFirstSelectedOption().getText();
     }
 
 
