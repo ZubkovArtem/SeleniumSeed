@@ -35,7 +35,7 @@ public class Test3 {
         billingDetailPage = billingDetailPostScreen.clickPostBilling();
         billingDetailPage.clickPostButton();
         String postErrorActual = billingDetailPostScreen.getErrorMessage();
-        String postErrorExpected = "Error:\nThe record has already been posted.";
+        String postErrorExpected = "The record has already been posted.";
         Assert.assertEquals(postErrorActual,postErrorExpected);
     }
 

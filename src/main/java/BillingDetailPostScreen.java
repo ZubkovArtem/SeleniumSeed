@@ -12,7 +12,7 @@ public class BillingDetailPostScreen extends GeneralPage{
 
     public String getErrorMessage (){
         wait.until(ExpectedConditions.presenceOfElementLocated(errorText));
-        return driver.findElement(errorText).getText();
+        return driver.findElement(errorText).getText().replace("Error:\n","");
     }
 
     public BillingDetailPage clickPostBilling(){
