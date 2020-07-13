@@ -12,7 +12,7 @@ public class Test2 {
 
     @Before
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\Артем\\Dropbox\\SeleniumSeed\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","./src/main/resources/chromedriver1.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://login.salesforce.com/");
